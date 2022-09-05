@@ -1,10 +1,10 @@
 package main
 
 var (
-	MySQLusername string = ""
-	MySQLpassword string = ""
-	MySQLaddress  string = ""
-	MySQLport     string = ""
+	MySQLusername string = "root"
+	MySQLpassword string = "Barnabarna03"
+	MyAddress     string = "localhost"
+	MyPort        string = "3306"
 
-	ListenAndServeIp string = ""
+	ListenAndServeIp string = "localhost:8080"
 )

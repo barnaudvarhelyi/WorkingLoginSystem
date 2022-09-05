@@ -12,7 +12,7 @@ var db *sql.DB
 
 func init() {
 	var err error
-	dsn := MySQLusername + ":" + MySQLpassword + "@tcp(" + MySQLaddress + ":" + MySQLport + ")/login_system"
+	dsn := MySQLusername + ":" + MySQLpassword + "@tcp(" + MyAddress + ":" + MyPort + ")/login_system"
 
 	db, err = sql.Open("mysql", dsn)
 

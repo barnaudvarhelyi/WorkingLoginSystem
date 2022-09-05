@@ -399,7 +399,7 @@ func forgotPswValHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("Line 399still good")
 	}
 
-	domName := "http://localhost:8080"
+	domName := "http://" + MyAddress + ":" + MyPort
 	subject := "MyApp Account Recovery"
 	body := `<html>
 				<h1>Click Link to Verify Email</h1>

@@ -203,17 +203,8 @@ func (u *User) CreateNewUser() error {
 	}
 
 	var domName string
-	// if servLog == "local" {
-	// 	domName = "http://localhost:8080"
-	// } else {
-	// 	if useHTTPS == "true" {
-	// 		domName = "https://" + domainName
-	// 	} else {
-	// 		domName = "http://" + domainName
-	// 	}
-	// }
-	// fmt.Println("domName: ", domName)
-	domName = "http://localhost:8080"
+
+	domName = "http://" + MyAddress + ":" + MyPort
 	subject := "Email Verification"
 	HTMLbody :=
 		`<html>
