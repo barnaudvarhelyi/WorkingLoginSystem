@@ -11,10 +11,10 @@ import (
 var db *sql.DB
 
 func init() {
-	// dsn := MySQLusername + ":" + MySQLpassword + "@tcp(" + MySQLaddress + MySQLport + ")/" + dbName
 	var err error
+	dsn := MySQLusername + ":" + MySQLpassword + "@tcp(" + MySQLaddress + ":" + MySQLport + ")/login_system"
 
-	dsn := "root:Barnabarna03@tcp(localhost:3306)/login_system"
+	// dsn := "root:Barnabarna03@tcp(localhost:3306)/login_system"
 
 	db, err = sql.Open("mysql", dsn)
 

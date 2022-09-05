@@ -86,9 +86,7 @@ func main() {
 	mux.HandleFunc("/forgotpswemailver", forgotPswEmailVerHandler)
 	mux.HandleFunc("/forgotpswchange", forgotPswChangeHandler)
 
-	//TODO: Login/Register block when User is logged in
-
-	err = http.ListenAndServe("localhost:8080", handlers.CORS(header, methods, origins)(mux))
+	err = http.ListenAndServe(ListenAndServeIp, handlers.CORS(header, methods, origins)(mux))
 	if err != nil {
 		log.Fatal(err)
 	}
