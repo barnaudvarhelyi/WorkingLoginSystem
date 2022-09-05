@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            margin-top: 10vw;
+        }
+    </style>
+</head>
+<body>
+    <h2>Personal Info</h2>
+
+    <form action="/account/edit" method="POST">
+        <label for="username">Name:</label><br>
+        <input type="text" id="username" value="{{.Username}}" name="username" readonly><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" name="email" id="email" value="{{.Email}}" readonly><br><br>
+
+        <label for="created">Account Created:</label><br>
+        <input type="text" name="created-at" id="created-at" value="{{.CreatedAt}}" readonly><br><br>
+
+        <label for="isActive">Email Verified</label><br>
+        <input type="text" name="is-active" id="is-active" value="{{if eq .Active 1}}active{{else}}Unverified Email{{end}}" readonly><br><br>
+
+        <input type="submit" value="Edit">
+    </form>
+    <br>
+    <form action="/home">
+        <button type="submit">Back</button>
+    </form>
+</body>
+</html>

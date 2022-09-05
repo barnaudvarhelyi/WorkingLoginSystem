@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            margin-top: 10vw;
+        }
+    </style>
+</head>
+<body>
+    <h2>Edit Personal Info</h2>
+    {{if .UserMessage}}<h4>{{.UserMessage}}</h4>{{end}}
+    <form action="/account/edit/verify" method="POST">
+        <label for="username">Name:</label><br>
+        <input type="text" id="username" value="{{.User.Username}}" name="username"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" name="email" id="email" value="{{.User.Email}}"><br>
+
+        <label for="created">Account Created:</label><br>
+        <input type="text" name="created-at" id="created-at" value="{{.User.CreatedAt}}" readonly><br>
+
+        <label for="password">Current password (required)</label><br>
+        <input type="password" name="password" id="password"><br>
+        <label for="newpassword">New password</label><br>
+        <input type="password" name="newpassword" id="newpassword"><br>
+        <label for="password">Confirm password</label><br>
+        <input type="password" name="confirmpassword" id="confirmpassword"><br>
+
+        <label for="Active">Email Verified</label><br>
+        <input type="text" name="active" id="active" value="{{if eq .User.Active 1}}active{{else}}Unverified Email{{end}}" readonly><br><br>
+        
+        <input type="submit" value="Edit">
+    </form>
+    <br>
+    <form action="/account/profile">
+        <button type="submit">Cancel</button>
+    </form>
+</body>
+</html>

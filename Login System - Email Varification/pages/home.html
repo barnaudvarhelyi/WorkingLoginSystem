@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            margin-top: 10vw;
+        }
+    </style>
+</head>
+<body>  
+    {{if .message}}
+        <h3>{{.message}}</h3>
+    {{end}}
+    <h1>HOME </h1>
+    <form action="/account/profile" method="POST">
+        <button type="submit">Profile</button>
+    </form>
+    <br><br>
+    <form action="/logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+
+</body>
+</html>

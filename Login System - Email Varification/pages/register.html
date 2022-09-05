@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            margin-top: 10vw;
+        }
+    </style>
+    <title>Register Account</title>
+</head>
+<body>
+    <h2>Register New Account</h2><br>
+
+        username must contain only letters or numbers<br>
+        username must be longer than 4 characters but sorter than 51<br>
+        password must be of significiant complexity<br><br>
+
+        {{if .massage}}
+        <h4>{{.massage}}</h4>
+        {{end}}
+        <form action="/register" method="POST">
+
+            <label for="username">Name:</label><br>
+            <input type="text" name="username" id="username" {{if .user}}value="{{.user.Username}}"{{end}}><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="text" name="email" id="email" {{if .user}}value="{{.user.Email}}"{{end}}><br><br>
+
+            <label for="password">Password</label><br>
+            <input type="password" name="password" id="password"><br><br>
+            <input type="submit" value="Submit" id="submit" >
+        </form>
+
+
+
+        <script>    
+            var submitBtn = document.getElementById("submit"); 
+
+            var body = document.body
+            body.onload = SetActive(false)
+
+            function SetActive(IsActive){
+                submitBtn.disabled = IsActive;
+            }
+
+        </script>
+</body>
+</html>

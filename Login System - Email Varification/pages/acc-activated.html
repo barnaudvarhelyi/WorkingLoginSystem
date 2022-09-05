@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            margin-top: 10vw;
+        }
+        a {
+            border: 2px solid black;
+            background-color: lightblue;
+            border-radius: 10%;
+            padding: 5px;
+            width: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+        }
+        #nop{
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    {{if .message}}
+        {{.message}}
+    {{else}}
+        <h1>Account Activated</h1>
+        <h3>Do you want to go to the home page?</h3>
+        <a href="/home">Yes, I do</a>
+        <a id="nop" href="javascript:window.open('','_self').close();">No, I do not</a>
+    {{end}}
+</body>
+
+</html>
