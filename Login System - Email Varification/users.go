@@ -204,7 +204,7 @@ func (u *User) CreateNewUser() error {
 
 	var domName string
 
-	domName = "http://" + MyAddress + ":" + MyPort
+	domName = "http://" + ListenAndServeIp
 	subject := "Email Verification"
 	HTMLbody :=
 		`<html>
